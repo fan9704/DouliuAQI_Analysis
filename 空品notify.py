@@ -5,8 +5,8 @@ import pandas as pd
 import time
 import schedule
 #https://www.taiwanstat.com/realtime/pm2.5/
-driverPath = "C:\\Users\cxz12\Downloads\chromedriver.exe"
-browser = webdriver.Chrome(driverPath)
+# driverPath = "C:\\Users\cxz12\Downloads\chromedriver.exe"
+browser = webdriver.Chrome()
 aqitxt = ''
 token = 'liGQGTFiNe2W3J7axeK4rowYdggkTyo0r1HhbbMvWi4'
 url = 'https://airtw.epa.gov.tw'
@@ -66,7 +66,7 @@ def PM25():
     df.iloc[row, col+1]='雲林縣 斗六'
     df.iloc[row, col+2]=time.strftime("%a %b %d %H:%M:%S %Y", time.localtime())
     df.iloc[row, col+3]=int(aqival)
-    df.to_excel('2021_05.xlsx',sheet_name="斗六空氣監測")
+    df.to_excel('2022_05.xlsx',sheet_name="斗六空氣監測")
     #-----------------------------------
     #----pandas
     print(PM_str)
