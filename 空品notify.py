@@ -8,7 +8,7 @@ import schedule
 # driverPath = "C:\\Users\cxz12\Downloads\chromedriver.exe"
 browser = webdriver.Chrome()
 aqitxt = ''
-token = 'liGQGTFiNe2W3J7axeK4rowYdggkTyo0r1HhbbMvWi4'
+token = 'JpyvNjw2pC140aZsHpOGfWwHgVwfWcGwkeaPXsj1LAj'
 url = 'https://airtw.epa.gov.tw'
 browser.get(url)
 browser.maximize_window()
@@ -74,7 +74,7 @@ def PM25():
 def main():
     PM25_data = PM25()
     lineNotifyMessage_text(token, str(PM25_data))
-
+main()
 schedule.every().day.at('09:30').do(main)
 while True:
       schedule.run_pending()
